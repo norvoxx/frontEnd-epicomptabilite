@@ -1,5 +1,5 @@
 .container-nav-left {
-  position: fixed;
+  /* position: fixed; */
 
   width: fit-content;
   padding-right: 10px;
@@ -38,6 +38,8 @@
 .title-text .subtitle {
   font-size: 0.7rem;
   color: var(--subtitle-couleur);
+  white-space: nowrap;
+
 }
 
 .container-nav-left ul {
@@ -57,9 +59,4 @@
 
 .container-nav-left ul li i {
   padding-right: 10px;
-}
-
-.nav-login {
-  position: absolute;
-  bottom: 0;
 }

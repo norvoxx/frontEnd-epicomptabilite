@@ -27,13 +27,16 @@
 body {
   font-family: "Arimo", sans-serif;
   background-color: var(--bg-couleur);
-  min-height: 100vh;
+  min-height: 100vh; 
+
+  display: flex;
+  flex-direction: row;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-couleur: #18191A; /* DarkNeutral0 */
-    --bg-couleur-spe: #1F1F21; /* DarkNeutral 100 */
+    --bg-couleur: #18191A;
+    --bg-couleur-spe: #1F1F21; 
 
     
     --bg-couleur-overlay: #222222;
