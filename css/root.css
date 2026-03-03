@@ -27,6 +27,7 @@
 body {
   font-family: "Arimo", sans-serif;
   background-color: var(--bg-couleur);
+  color: var(--text-couleur);
   min-height: 100vh;
 
   display: flex;

@@ -1,11 +1,12 @@
 .container-nav-left {
-  /* position: fixed; */
-
   width: fit-content;
-  padding-right: 10px;
   height: 100vh;
   background-color: var(--bg-couleur-spe);
   border: 1px solid var(--border-couleur);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .nav-logo {
@@ -35,6 +36,11 @@
   color: var(--text-couleur);
 }
 
+.subtitle {
+  color: var(--subtitle-couleur);
+
+}
+
 .title-text .subtitle {
   font-size: 0.7rem;
   color: var(--subtitle-couleur);
@@ -56,6 +62,63 @@
   cursor: pointer;
 }
 
+.container-nav-left li {
+  display: flex;
+}
+
 .container-nav-left ul li i {
   padding-right: 10px;
+}
+
+
+.nav-login {
+  height: 80px;
+  border-top: solid 1px var(--border-couleur);
+
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  /* justify-content: center; */
+}
+
+.nav-login>* {
+  margin: 5px;
+}
+
+.nav-login img {
+  border-radius: 50%;
+  height: 50px;
+}
+
+.nav-login>*>.subtitle {
+  /* display: none; */
+  font-size: 0.8rem;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 768px) {
+  li>p {
+    display: none;
+  }
+
+  .nav-login>*>p {
+    display: none;
+  }
+
+  .nav-login>i {
+    display: none;
+  }
+
+  .container-nav-left {
+    padding: 0;
+  }
+
+  .subtitle {
+    display: none;
+  }
+
+  .main-title>span {
+    display: none;
+  }
 }
