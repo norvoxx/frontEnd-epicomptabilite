@@ -1,10 +1,11 @@
 .container-nav-left {
   position: fixed;
-  
+
   width: fit-content;
   padding-right: 10px;
   height: 100vh;
-  background-color: var(--bg-couleur);
+  background-color: var(--bg-couleur-spe);
+  border: 1px solid var(--border-couleur);
 }
 
 .nav-logo {
@@ -31,16 +32,12 @@
   font-size: 1.2rem;
   font-weight: bold;
   white-space: nowrap;
-  color: var(--text-color);
-}
-
-.main-title > span{
-  color: var(--special-color);
+  color: var(--text-couleur);
 }
 
 .title-text .subtitle {
   font-size: 0.7rem;
-  color: var(--subtitle-color);
+  color: var(--subtitle-couleur);
 }
 
 .container-nav-left ul {
@@ -49,7 +46,7 @@
   justify-content: center;
   /* gap: 0.01rem; */
   margin-left: 1rem;
-  color: var(--text-color);
+  color: var(--text-muted-couleur);
 }
 
 .container-nav-left ul li {

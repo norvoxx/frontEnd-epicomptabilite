@@ -7,13 +7,18 @@
 }
 
 :root {
-  --bg-couleur: #fff;
-  --bg-couleur-spe: #f1efef;
+  --bg-couleur: #FFFFFF;
+  --bg-couleur-spe: #F8F8F8;
   
-  --text-color: #000;
-  --subtitle-color: #c0c0c0;
+  --bg-couleur-overlay: #f1efef;
+  --bg-couleur-over: #202020;
 
-  --special-color: #008cff;
+  --text-couleur: #000;
+  --text-muted-couleur: #222222;
+  --subtitle-couleur: #c0c0c0;
+  
+  --special-couleur: #008cff;
+  --border-couleur: #d3d3d3;
 
   --radius: 0.75rem;
   --gap: 1.5rem;
@@ -21,18 +26,28 @@
 
 body {
   font-family: "Arimo", sans-serif;
-  background-color: var(--bg-couleur-spe);
+  background-color: var(--bg-couleur);
   min-height: 100vh;
 }
 
 @media (prefers-color-scheme: dark) {
-
-  /* https://m2.material.io/design/color/dark-theme.html*/
   :root {
-    --bg-couleur: #1e1e1e;
-    --bg-couleur-spe: #121212;
+    --bg-couleur: #18191A; /* DarkNeutral0 */
+    --bg-couleur-spe: #1F1F21; /* DarkNeutral 100 */
 
-    --text-color: #c2c2c2;
-    --subtitle-color: #9a9c9f;
+    
+    --bg-couleur-overlay: #222222;
+    --bg-couleur-over: #2c2c2c;
+
+    --text-couleur: #f5f5f5;
+    --text-muted-couleur: #b3b3b3;
+    --subtitle-couleur: #8f8f8f;
+
+    --special-couleur: #3ea6ff;
+
+    --border-couleur: #2e2e2e;
   }
 }
+
+/* https://m2.material.io/design/color/dark-theme.html*/
+/* https://atlassian.design/foundations/color/color-palette */
