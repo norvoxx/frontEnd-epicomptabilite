@@ -1,13 +1,17 @@
 .container-nav-left {
-  width: 20%;
-  height: 100vw;
-  background-color: aqua;
+  position: fixed;
+  
+  width: fit-content;
+  padding-right: 10px;
+  height: 100vh;
+  background-color: var(--bg-couleur);
 }
 
 .nav-logo {
   border-radius: 50px;
   width: 50px;
   height: 50px;
+  margin: 0.5rem;
   object-fit: contain;
 }
 
@@ -16,36 +20,49 @@
   align-items: center;
   gap: 10px;
 }
+
 .title-text {
+  margin: 15px 20px;
   display: flex;
   flex-direction: column;
 }
 
 .title-text .main-title {
   font-size: 1.2rem;
+  font-weight: bold;
   white-space: nowrap;
+  color: var(--text-color);
+}
+
+.main-title > span{
+  color: var(--special-color);
 }
 
 .title-text .subtitle {
-  font-size: 0.75rem;
-  color: #c0c0c0;
+  font-size: 0.7rem;
+  color: var(--subtitle-color);
 }
 
 .container-nav-left ul {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  /* gap: 1rem; */
-  /* margin-left: 1rem; */
-  color: blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* gap: 0.01rem; */
+  margin-left: 1rem;
+  color: var(--text-color);
 }
 
 .container-nav-left ul li {
-  margin: 0.75rem;
+  margin: 0.65rem;
   /* font-size: 1rem; */
   cursor: pointer;
 }
 
 .container-nav-left ul li i {
   padding-right: 10px;
+}
+
+.nav-login {
+  position: absolute;
+  bottom: 0;
 }

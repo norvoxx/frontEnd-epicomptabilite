@@ -9,6 +9,12 @@
 :root {
   --bg-couleur: #fff;
   --bg-couleur-spe: #f1efef;
+  
+  --text-color: #000;
+  --subtitle-color: #c0c0c0;
+
+  --special-color: #008cff;
+
   --radius: 0.75rem;
   --gap: 1.5rem;
 }
@@ -17,4 +23,16 @@ body {
   font-family: "Arimo", sans-serif;
   background-color: var(--bg-couleur-spe);
   min-height: 100vh;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  /* https://m2.material.io/design/color/dark-theme.html*/
+  :root {
+    --bg-couleur: #1e1e1e;
+    --bg-couleur-spe: #121212;
+
+    --text-color: #c2c2c2;
+    --subtitle-color: #9a9c9f;
+  }
 }
