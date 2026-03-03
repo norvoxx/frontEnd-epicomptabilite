@@ -1,7 +1,4 @@
 .container-nav-left {
-  position: fixed;
-
-  width: fit-content;
   padding-right: 10px;
   height: 100vh;
   background-color: var(--bg-couleur-spe);

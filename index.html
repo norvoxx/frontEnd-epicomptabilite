@@ -6,14 +6,17 @@
     <title>EPI Comptability</title>
     <link rel="stylesheet" href="./css/root.css" />
     <link rel="stylesheet" href="./css/nav-left.css" />
+    <link rel="stylesheet" href="./css/nav.top.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
   </head>
   <body>
-    <section class="container-nav-left">
-      <nav class="nav-left">
+    <div class="layout">
+      <aside class="container-nav-left">
         <div class="container-title">
           <!-- <img class="nav-logo" src="/imgs/logo.png" alt="logo" /> -->
           <div class="title-text">
@@ -24,12 +27,10 @@
         <ul>
           <!-- i acceuil-->
           <li><i class="fa-solid fa-house"></i>Accueil</li>
-          <!-- <li><i class="fa-solid fa-house-chimney"></i></li> -->
 
           <!-- i calendrier-->
-          <!-- <li><i class="fa-solid fa-calendar"></i></li> -->
+
           <li><i class="fa-solid fa-calendar-days"></i>Calendrier</li>
-          <!-- <li><i class="fa-solid fa-calendar-plus"></i></li> -->
 
           <!-- i taches-->
           <li><i class="fa-solid fa-list-check"></i>Tâches</li>
@@ -62,10 +63,58 @@
           <!-- <li><i class="fa-solid fa-crown"></i></li> -->
           <li><i class="fa-solid fa-gear"></i>Admin</li>
         </ul>
+
         <div class="nav-login">
           <p>toto</p>
         </div>
-      </nav>
-    </section>
+      </aside>
+
+      <div class="main">
+        <header class="container-top">
+          <div>
+            <h2>Tableau de bord</h2>
+            <p>Bienvenue, Eve Hamilton. Voici ce qui se passe aujourd'hui.</p>
+          </div>
+          <div class="icons">
+            <!-- <input type="text" placeholder="Rechercher" /> -->
+            <!-- <i class="fa-solid famagnify-glass"></i> -->
+            <i class="fa-solid fa-search"></i>
+            <i class="fa-solid fa-bell"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        </header>
+        <section class="content">
+          <!-- CARDS-->
+          <div class="card">
+            <div>
+              <span>Projet actif</span>
+            </div>
+            <div>
+              <span>Membres total</span>
+            </div>
+            <div>
+              <span>Stockage</span>
+            </div>
+            <div>
+              <span>Factures en attentes</span>
+            </div>
+          </div>
+
+          <div class="tache">
+            <div>
+              <span>Tâches en cours</span>
+            </div>
+          </div>
+          <div class="card-right">
+            <div>
+              <span>Evenement à venir</span>
+            </div>
+            <div>
+              <span>Fichiers récents</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
   </body>
 </html>

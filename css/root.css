@@ -7,16 +7,16 @@
 }
 
 :root {
-  --bg-couleur: #FFFFFF;
-  --bg-couleur-spe: #F8F8F8;
-  
+  --bg-couleur: #ffffff;
+  --bg-couleur-spe: #f8f8f8;
+
   --bg-couleur-overlay: #f1efef;
   --bg-couleur-over: #202020;
 
   --text-couleur: #000;
   --text-muted-couleur: #222222;
   --subtitle-couleur: #c0c0c0;
-  
+
   --special-couleur: #008cff;
   --border-couleur: #d3d3d3;
 
@@ -27,15 +27,19 @@
 body {
   font-family: "Arimo", sans-serif;
   background-color: var(--bg-couleur);
-  min-height: 100vh;
+  height: 100vh;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-couleur: #18191A; /* DarkNeutral0 */
-    --bg-couleur-spe: #1F1F21; /* DarkNeutral 100 */
+    --bg-couleur: #18191a; /* DarkNeutral0 */
+    --bg-couleur-spe: #1f1f21; /* DarkNeutral 100 */
 
-    
     --bg-couleur-overlay: #222222;
     --bg-couleur-over: #2c2c2c;
 
