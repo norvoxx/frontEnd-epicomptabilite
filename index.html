@@ -6,17 +6,17 @@
     <title>EPI Comptability</title>
     <link rel="stylesheet" href="./css/root.css" />
     <link rel="stylesheet" href="./css/nav-left.css" />
-    <link rel="stylesheet" href="./css/nav.top.css" />
+    <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/main.css" />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
   </head>
+
   <body>
-    <div class="layout">
-      <aside class="container-nav-left">
+    <section class="container-nav-left">
+      <nav class="nav-left">
         <div class="container-title">
           <!-- <img class="nav-logo" src="/imgs/logo.png" alt="logo" /> -->
           <div class="title-text">
@@ -27,10 +27,12 @@
         <ul>
           <!-- i acceuil-->
           <li><i class="fa-solid fa-house"></i>Accueil</li>
+          <!-- <li><i class="fa-solid fa-house-chimney"></i></li> -->
 
           <!-- i calendrier-->
-
+          <!-- <li><i class="fa-solid fa-calendar"></i></li> -->
           <li><i class="fa-solid fa-calendar-days"></i>Calendrier</li>
+          <!-- <li><i class="fa-solid fa-calendar-plus"></i></li> -->
 
           <!-- i taches-->
           <li><i class="fa-solid fa-list-check"></i>Tâches</li>
@@ -63,58 +65,30 @@
           <!-- <li><i class="fa-solid fa-crown"></i></li> -->
           <li><i class="fa-solid fa-gear"></i>Admin</li>
         </ul>
-
-        <div class="nav-login">
-          <p>toto</p>
-        </div>
-      </aside>
-
-      <div class="main">
-        <header class="container-top">
-          <div>
-            <h2>Tableau de bord</h2>
-            <p>Bienvenue, Eve Hamilton. Voici ce qui se passe aujourd'hui.</p>
-          </div>
-          <div class="icons">
-            <!-- <input type="text" placeholder="Rechercher" /> -->
-            <!-- <i class="fa-solid famagnify-glass"></i> -->
-            <i class="fa-solid fa-search"></i>
-            <i class="fa-solid fa-bell"></i>
-            <i class="fa-solid fa-ellipsis-vertical"></i>
-          </div>
-        </header>
-        <section class="content">
-          <!-- CARDS-->
-          <div class="card">
-            <div>
-              <span>Projet actif</span>
+      </nav>
+    </section>
+    <section class="main-container">
+      <main>
+        <section class="header-container">
+          <header>
+            <div class="header-search">
+              <input type="text" placeholder="Recheche Action / taches ..." />
+              <!-- https://fontawesome.com/icons/magnifying-glass?f=classic&s=solid -->
+              <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-            <div>
-              <span>Membres total</span>
-            </div>
-            <div>
-              <span>Stockage</span>
-            </div>
-            <div>
-              <span>Factures en attentes</span>
-            </div>
-          </div>
-
-          <div class="tache">
-            <div>
-              <span>Tâches en cours</span>
-            </div>
-          </div>
-          <div class="card-right">
-            <div>
-              <span>Evenement à venir</span>
-            </div>
-            <div>
-              <span>Fichiers récents</span>
-            </div>
-          </div>
+            <ul>
+              <li>
+                <!-- https://fontawesome.com/icons/bell?f=classic&s=solid -->
+                <i class="fa-solid fa-bell"></i>
+              </li>
+              <li>
+                <!-- https://fontawesome.com/icons/bars?f=classic&s=solid -->
+                <i class="fa-solid fa-bars"></i>
+              </li>
+            </ul>
+          </header>
         </section>
-      </div>
-    </div>
+      </main>
+    </section>
   </body>
 </html>

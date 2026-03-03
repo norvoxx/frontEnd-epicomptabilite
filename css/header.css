@@ -1,0 +1,42 @@
+.header-container {
+    /* height: 8vh; */
+    height: fit-content;
+    background-color: var(--bg-couleur-spe);
+    color: var(--text-couleur);
+    border: 1px solid var(--border-couleur);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+header>ul {
+    position: absolute;
+    right: 0;
+
+    margin: 20px;
+    display: flex;
+    gap: 30px;
+}
+
+input {
+    width: 300px;
+    border: none;
+    background-color: transparent;
+    color: var(--text-couleur);
+    border-bottom: 1px solid var(--text-couleur);
+}
+
+input:focus {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: var(--text-couleur);
+    border-bottom: 1px solid var(--special-couleur);
+}
