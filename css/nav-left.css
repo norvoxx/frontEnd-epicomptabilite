@@ -1,9 +1,8 @@
 .container-nav-left {
-  /* position: fixed; */
-
   width: fit-content;
   padding-right: 10px;
   height: 100vh;
+
   background-color: var(--bg-couleur-spe);
   border: 1px solid var(--border-couleur);
 }
@@ -57,6 +56,32 @@
   cursor: pointer;
 }
 
+.container-nav-left li {
+  display: flex;
+}
+
 .container-nav-left ul li i {
   padding-right: 10px;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  li>p {
+    display: none;
+  }
+
+  .container-nav-left {
+    padding: 0;
+  }
+
+  .subtitle {
+    display: none;
+  }
+
+  .main-title>span {
+    display: none;
+  }
 }

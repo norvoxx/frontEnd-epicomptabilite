@@ -26,7 +26,7 @@ header>ul {
 }
 
 input {
-    width: 300px;
+    width: 400px;
     border: none;
     background-color: transparent;
     color: var(--text-couleur);
