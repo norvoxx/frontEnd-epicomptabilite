@@ -83,7 +83,7 @@
   align-items: center;
   flex-wrap: nowrap;
 
-  /* justify-content: center; */
+  justify-content: center;
 }
 
 .nav-login > * {
