@@ -33,6 +33,34 @@ body {
   display: flex;
   flex-direction: row;
 }
+.main-container {
+  padding-left: 80px;
+  /* background-color: aqua; */
+
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+.dashboard {
+  /* background-color: red; */
+  height: 100%;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+.box {
+  background-color: var(--bg-couleur-spe);
+  border: 1px solid var(--border-couleur);
+  border-radius: var(--radius);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
 
 @media (prefers-color-scheme: dark) {
   :root {

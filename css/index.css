@@ -138,11 +138,7 @@
   margin-right:10px ;
 }
 
-.box {
-  background-color: var(--bg-couleur-spe);
-  border: 1px solid var(--border-couleur);
-  border-radius: var(--radius);
-}
+
 
 @media (max-width: 970px) {
   .top-box {
