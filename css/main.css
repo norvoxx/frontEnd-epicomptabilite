@@ -115,9 +115,27 @@
   background-color: #5d1f1a73;
   color: #FD9891;
 }
+
 .tag>li:nth-child(2) {
   background-color: #28311b6e;
   color: #BDE97C;
+}
+
+.event-list {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.event-list>p:nth-child(1) {
+  background-color: #5D1F1A;
+  color: #F87168;
+  border: 1px solid;
+
+  border-radius: var(--radius);
+
+  padding: 10px;
+  margin-right:10px ;
 }
 
 .box {
