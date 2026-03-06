@@ -1,6 +1,6 @@
 .container-nav-left {
   width: fit-content;
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--bg-couleur-spe);
   border: 1px solid var(--border-couleur);
 
