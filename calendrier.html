@@ -8,14 +8,85 @@
     <link rel="stylesheet" href="./css/root.css" />
     <link rel="stylesheet" href="./css/nav-left.css" />
     <link rel="stylesheet" href="./css/header.css" />
-    
+
     <link rel="stylesheet" href="./css/pages/calendrier.css">
 
     <!-- <link rel="stylesheet" href="./css/main.css" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.js'></script>
+
 </head>
 
 <body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                height: 600,
+                locale: 'fr',
+
+                editable: true,        // 🔥 drag & drop
+                eventResizableFromStart: true, // redimensionnement
+                selectable: true,      // sélection de dates
+                selectMirror: true,
+
+                events: [
+                    {
+                        id: '1',
+                        title: 'Déplaçable',
+                        start: '2026-02-10'
+                    },
+                    {
+                        id: '1',
+                        title: 'Déplaçable',
+                        start: '2026-02-10',
+                        editable: false,
+                        durationEditable: false
+                    },
+                    {
+                        id: '2',
+                        title: 'Avec heure',
+                        start: '2026-02-12T09:00:00',
+                        end: '2026-02-12T11:00:00'
+                    }
+                ],
+
+                // Quand on déplace un événement
+                eventDrop: function (info) {
+                    alert(
+                        'Événement déplacé !\n' +
+                        'Ancienne date : ' + info.oldEvent.startStr + '\n' +
+                        'Nouvelle date : ' + info.event.startStr
+                    );
+
+                    // 👉 ici tu peux faire un appel AJAX pour sauvegarder en BDD
+                },
+
+                // Quand on redimensionne
+                eventResize: function (info) {
+                    alert(
+                        'Durée modifiée !\n' +
+                        'Nouvelle fin : ' + info.event.endStr
+                    );
+                },
+                eventClick: function (info) {
+                    alert('Événement cliqué : ' + info.event.title);
+                },
+
+                dateClick: function (info) {
+                    alert(
+                        'Date cliquée : ' + info.dateStr
+                    );
+
+                    console.log(info);
+                }
+            });
+
+            calendar.render();
+        });
+    </script>
     <section class="container-nav-left">
         <nav class="nav-left">
             <div>
@@ -113,7 +184,7 @@
 
             <section class="dashboard">
                 <div class="box">
-
+                    <div class="calendar" id='calendar'></div>
                 </div>
             </section>
         </main>
