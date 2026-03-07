@@ -24,12 +24,12 @@
 
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'dayGridMonth',
-                height: 600,
+                height: "100%", 
                 locale: 'fr',
 
-                editable: true,        // 🔥 drag & drop
-                eventResizableFromStart: true, // redimensionnement
-                selectable: true,      // sélection de dates
+                editable: true,
+                eventResizableFromStart: true,
+                selectable: true,
                 selectMirror: true,
 
                 events: [
@@ -52,8 +52,6 @@
                         end: '2026-02-12T11:00:00'
                     }
                 ],
-
-                // Quand on déplace un événement
                 eventDrop: function (info) {
                     alert(
                         'Événement déplacé !\n' +
@@ -61,10 +59,7 @@
                         'Nouvelle date : ' + info.event.startStr
                     );
 
-                    // 👉 ici tu peux faire un appel AJAX pour sauvegarder en BDD
                 },
-
-                // Quand on redimensionne
                 eventResize: function (info) {
                     alert(
                         'Durée modifiée !\n' +
