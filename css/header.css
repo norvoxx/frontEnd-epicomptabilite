@@ -1,5 +1,4 @@
 .header-container {
-  /* height: 8vh; */
   height: fit-content;
   background-color: var(--bg-couleur-spe);
   color: var(--text-couleur);

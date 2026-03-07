@@ -2,11 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* height: 20%; */
   width: 100%;
   padding: 20px;
   border: 1px solid var(--border-couleur);
-  /* color: white; */
   background-color: var(--bg-couleur-spe);
 }
 
