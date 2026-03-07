@@ -1,27 +1,32 @@
 .biblio {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* colonnes auto en fonction de l'espace */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* colonnes auto en fonction de l'espace */
     gap: 15px;
     padding: 40px;
     box-sizing: border-box;
 }
 
 .card {
-    height: 150px;
+    height: 200px;
+    /* width: 200px; */
     background-color: var(--bg-couleur-spe);
     border-radius: var(--radius);
+
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
+
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .card i {
@@ -34,6 +39,103 @@
     font-size: 0.85rem;
     text-align: center;
     word-break: break-word;
+
+}
+
+.top-card {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.file-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-meta {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7rem;
+}
+
+.top-card {
+    /* background-color: blue; */
+    padding: 0 10px;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+
+    position: relative;
+}
+
+.top-card>i {
+    font-size: 20px;
+}
+
+.file-info i {
+    font-size: 2rem;
+    color: var(--text-couleur);
+    margin-bottom: 8px;
+}
+
+.folder>i{
+   font-size: 3rem;
+}
+
+.file-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-meta {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.7rem;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+/* créateur + date */
+.creator {
+    opacity: 0.8;
+}
+
+.date {
+    opacity: 0.6;
+}
+
+/* tag */
+.tag {
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-size: 0.65rem;
+    font-weight: 500;
+}
+
+/* couleurs des tags */
+.tag.pdf {
+    background: #ff4d4d;
+    color: white;
+}
+
+.tag.doc {
+    background: #2b7cff;
+    color: white;
+}
+
+.tag.img {
+    background: #34c759;
+    color: white;
 }
 
 /* Responsive pour tablettes */
@@ -49,13 +151,15 @@
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
         gap: 10px;
     }
+
     .card {
         height: 100px;
         padding: 10px;
     }
 }
+
 @media (max-width: 768px) {
-  .main-container {
-    padding-left: 30px;
-  }
+    .main-container {
+        padding-left: 30px;
+    }
 }
