@@ -1,5 +1,6 @@
 .task-table-container {
     padding: 20px;
+    overflow-x: auto; /* Permet le scroll horizontal sur petits écrans */
 }
 
 .task-table-container h2 {
@@ -15,6 +16,7 @@
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-width: 600px; /* Permet de garder une largeur minimale pour le tableau */
 }
 
 .task-table th,
@@ -70,6 +72,7 @@
     display: flex;
     gap: 5px;
     font-size: 10px;
+    flex-wrap: wrap; /* Permet aux tags de passer à la ligne sur mobile */
 }
 
 .tag>li {
@@ -86,17 +89,45 @@
     background-color: #28311b6e;
     color: #BDE97C;
 }
+@media (max-width: 768px) {
+  .main-container {
+    padding-left: 30px;
+  }
+}
 
-
+/* Media Queries pour mobile */
 @media (max-width: 768px) {
 
     .task-table th,
     .task-table td {
         padding: 8px 10px;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .task-table-container h2 {
         font-size: 1.3rem;
+    }
+
+    /* Scroll horizontal et largeur minimum */
+    .task-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Rendre les actions plus compactes */
+    .edit,
+    .delete {
+        font-size: 0.8rem;
+        margin-right: 5px;
+    }
+
+    .status {
+        font-size: 0.75rem;
+        padding: 3px 6px;
+    }
+
+    .tag {
+        font-size: 9px;
     }
 }
