@@ -114,3 +114,18 @@
 
 }
 
+@media (max-width: 768px) {
+
+  .main-container {
+    padding-left: 20px;
+  }
+
+  .top-box > div {
+    flex: 1 1 100%;
+  }
+
+  .event-box {
+    flex-direction: column;
+  }
+
+}
