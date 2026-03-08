@@ -95,7 +95,6 @@
     color: #BDE97C;
 }
 
-
 .task-table-nav {
     display: flex;
     justify-content: space-between;
@@ -103,7 +102,6 @@
     margin-bottom: 15px;
     gap: 10px;
 }
-
 
 .task-search {
     display: flex;
