@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="./css/root.css" />
   <link rel="stylesheet" href="./css/nav-left.css" />
   <link rel="stylesheet" href="./css/header.css" />
-  
+
+  <link rel="stylesheet" href="./css/pages/taches.css">
+
   <link rel="stylesheet" href="./css/pages/index.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -18,7 +20,6 @@
     <nav class="nav-left">
       <div>
         <div class="container-title">
-          <!-- <img class="nav-logo" src="/imgs/logo.png" alt="logo" /> -->
           <div class="title-text">
             <span class="main-title">EPI<span>-Studio</span></span>
             <span class="subtitle">Associasion Techologique</span>
@@ -117,33 +118,83 @@
           <div class="box"></div>
         </div>
         <div class="main-box">
-          <div class="task-list">
-            <h2>Taches</h2>
+          <div>
             <div class="box">
-              <ul class="task-box">
-                <li class="task-date"> 23 mars 2024</li>
-                <li>
-                  <h3>Finir le site et tout le feature</h3>
-                </li>
-                <ul class="tag">
-                  <li>Important</li>
-                  <li>Programation web</li>
-                </ul>
-              </ul>
+              <div class="task-table-container">
+                <h2>Liste des Tâches</h2>
+                <table class="task-table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Tâche</th>
+                      <th>Responsable</th>
+                      <th>Date limite</th>
+                      <th>Statut</th>
+                      <th>Tags</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>Finir le site</td>
+                      <td>Norvoxx</td>
+                      <td>10/03/2026</td>
+                      <td><span class="status completed">En cours</span></td>
+                      <td>
+                        <ul class="tag">
+                          <li>Urgent</li>
+                          <li>Web</li>
+                        </ul>
+                      </td>
+                      <td>
+                        <i class="fa-regular fa-message edit"></i>
+                        <i class="fa-solid fa-pen-to-square edit"></i>
+                        <i class="fa-solid fa-trash delete"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>Mettre à jour la base de données</td>
+                      <td>toto</td>
+                      <td>15/03/2026</td>
+                      <td><span class="status in-progress">En cours</span></td>
+                      <td>
+                        <ul class="tag">
+                          <li>Bases</li>
+                          <li>Important</li>
+                        </ul>
+                      </td>
+                      <td>
+                        <i class="fa-regular fa-message edit"></i>
+                        <i class="fa-solid fa-pen-to-square edit"></i>
+                        <i class="fa-solid fa-trash delete"></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>Créer la documentation</td>
+                      <td>Panw</td>
+                      <td>20/03/2026</td>
+                      <td><span class="status pending">À faire</span></td>
+                      <td>
+                        <ul class="tag">
+                          <li>Doc</li>
+                          <li>Low-prio</li>
+                        </ul>
+                      </td>
+                      <td>
+                        <i class="fa-regular fa-message edit"></i>
+                        <i class="fa-solid fa-pen-to-square edit"></i>
+                        <i class="fa-solid fa-trash delete"></i>
+
+                      </td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+              </div>
             </div>
-            <div class="box">
-              <ul class="task-box">
-                <li class="task-date"> 23 mars 2024</li>
-                <li>
-                  <h3>Finir le site et tout le feature</h3>
-                </li>
-                <ul class="tag">
-                  <li>Important</li>
-                  <li>Programation web</li>
-                </ul>
-            </div>
-            <div class="box"></div>
-            <div class="box"></div>
           </div>
           <div class="event-box">
 

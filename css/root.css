@@ -7,8 +7,8 @@
 }
 
 :root {
-  --bg-couleur: #ffffff;
-  --bg-couleur-spe: #f8f8f8;
+  --bg-couleur: #DDDEE1;
+  --bg-couleur-spe:#F8F8F8 ;
 
   --bg-couleur-overlay: #f1efef;
   --bg-couleur-over: #202020;
@@ -78,6 +78,22 @@ body {
 
     --border-couleur: #2e2e2e;
   }
+}
+
+@media (max-width: 768px) {
+
+  .main-container {
+    padding-left: 30px;
+  }
+
+  .top-box > div {
+    flex: 1 1 100%;
+  }
+
+  .event-box {
+    flex-direction: column;
+  }
+
 }
 
 /* https://m2.material.io/design/color/dark-theme.html*/

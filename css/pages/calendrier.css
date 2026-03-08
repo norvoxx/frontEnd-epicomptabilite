@@ -1,8 +1,7 @@
-.box{
-    height: 85vh;
+.box {
+  height: 85vh;
 }
 
-/* ===== FullCalendar styling ===== */
 .fc {
   font-family: "Arimo", sans-serif;
   color: var(--text-couleur);
@@ -11,7 +10,7 @@
 .fc-toolbar {
   display: flex;
   justify-content: space-between;
-align-items: center;
+  align-items: center;
 
   margin-bottom: 1rem;
 
@@ -35,7 +34,7 @@ align-items: center;
   border: none;
   border-radius: var(--radius);
   padding: 0.4rem 0.8rem;
-cursor: pointer;
+  cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
 
@@ -54,8 +53,6 @@ cursor: pointer;
   font-weight: 600;
 }
 
-/* ===== Dashboard container ===== */
 .dashboard .box {
   padding: 20px;
 }
-
