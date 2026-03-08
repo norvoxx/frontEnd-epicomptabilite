@@ -89,12 +89,32 @@
   margin-right: 12px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 970px) {
 
-  .main-container {
-    padding-left: 30px;
+  .top-box {
+    justify-content: center;
   }
 
+  .top-box > div {
+    flex: 1 1 45%;
+  }
+
+  .main-box {
+    flex-direction: column;
+  }
+
+  .event-box {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .event-box > div {
+    flex: 1 1 45%;
+  }
+
+}
+
+@media (max-width: 768px) {
   .top-box > div {
     flex: 1 1 100%;
   }
