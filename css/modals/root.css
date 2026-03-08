@@ -1,0 +1,185 @@
+.modal-container {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: visibility 0.4s;
+    z-index: 999;
+}
+
+.modal-container.active {
+    visibility: visible;
+}
+
+.modal-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-couleur-overlay);
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+    border-radius: var(--radius);
+}
+
+
+.modal-container.active .overlay {
+    opacity: 0.7;
+}
+
+.modal {
+    position: relative;
+    background-color: var(--bg-couleur-spe);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    padding: 2rem;
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    z-index: 1000;
+}
+
+.modal-container.active .modal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 0.8rem;
+    background-color: #ff365e;
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.close-modal:hover {
+    background-color: #e02a50;
+}
+
+.modal h1 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--text-couleur);
+}
+
+.modal p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    color: var(--text-muted-couleur);
+}
+
+.modal a {
+    color: var(--special-couleur);
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .modal {
+        padding: 1.5rem;
+    }
+
+    .close-modal {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.6rem;
+    }
+}
+
+.calendar-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+
+.calendarForm .form-left {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendarForm .form-right {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.modal input[type="text"],
+.modal input[type="date"],
+.modal input[type="time"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: var(--radius);
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.modal input[type="color"] {
+    width: 40px;
+    /* petite case */
+    height: 40px;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    margin-top: 0.5rem;
+    padding: 0;
+}
+
+.form-right label {
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.submit-btn {
+    margin-top: 1rem;
+    padding: 0.6rem 1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+.modal textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: var(--radius);
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    resize: vertical;
+    min-height: 100px;
+    font-family: inherit;
+
+    background-color: var(--bg-couleur-spe);
+    color: var(--text-couleur);
+}
+
+.modal textarea:focus {
+    outline: none;
+    border-color: var(--special-couleur);
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+}
+
+/* https://sweetalert2.github.io/ */
+/* https://codepen.io/insidevivek/pen/ePvzXg */

@@ -11,6 +11,8 @@
 
     <link rel="stylesheet" href="./css/pages/calendrier.css">
 
+    <link rel="stylesheet" href="./css/modals/root.css">
+
     <!-- <link rel="stylesheet" href="./css/main.css" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.js'></script>
@@ -23,9 +25,15 @@
             var calendarEl = document.getElementById('calendar');
 
             var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
-                height: "100%", 
+                headerToolbar: {
+                    start: 'dayGridMonth,timeGridWeek',
+                    center: 'title',
+                    end: 'prev,next',
+                    initialView: 'dayGridMonth',
+                },
+                height: "100%",
                 locale: 'fr',
+
 
                 editable: true,
                 eventResizableFromStart: true,
@@ -179,11 +187,66 @@
 
             <section class="dashboard">
                 <div class="box">
-                    <div class="calendar" id='calendar'></div>
+                    <div class="calendar" id='calendar'></div> <button class="modal-btn modal-trigger">Open</button>
                 </div>
             </section>
         </main>
+        <div class="modal-container" id="modalContainer">
+            <div class="overlay modal-trigger"></div>
+            <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="dialogDesc">
+                <button class="close-modal modal-trigger" aria-label="close modal">x</button>
+                <h1 id="modalTitle">Ajouter une date</h1>
+                <p id="dialogDesc">Sélectionnez une date à ajouter dans le calendrier.</p>
+
+                <form id="calendarForm" class="calendarForm">
+                    <div class="calendar-form">
+                        <div class="form-left">
+
+                            <label for="dateInput">Titre de l'evenement :</label>
+                            <input type="text" placeholder="Nom de l'événement">
+
+                            <label for="dateEndInput">Description :</label>
+
+                            <textarea name="" id=""></textarea>
+
+                            <label for="dateInput">Date :</label>
+                            <input type="date" id="dateInput" name="dateInput" required>
+
+                            <label for="dateInput">Heure :</label>
+                            <input type="time" id="dateInput" name="dateInput" required>
+
+
+                            <label for="dateEndInput">Jusqu'à :</label>
+                            <input type="date" id="dateEndInput" name="dateEndInput" required>
+
+
+                        </div>
+
+                        <div class="form-right">
+
+                            <label for="colorInput">Couleur :</label>
+                            <input type="color" id="colorInput" name="colorInput" value="#ff0000">
+                        </div>
+
+                    </div>
+                    <button type="submit" class="submit-btn">Ajouter</button>
+                </form>
+            </div>
+        </div>
+
     </section>
+
 </body>
+<script>
+    const modalContainer = document.querySelector(".modal-container");
+    const modalTriggers = document.querySelectorAll(".modal-trigger");
+
+    modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal))
+
+    function toggleModal() {
+        modalContainer.classList.toggle("active")
+    }
+
+</script>
 
 </html>
