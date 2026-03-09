@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="./css/chekbox.css">
 
     <link rel="stylesheet" href="./css/pages/taches.css">
+    <link rel="stylesheet" href="./css/modals/root.css">
+
     <!-- <link rel="stylesheet" href="./css/main.css" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -129,7 +131,7 @@
                                         <label class="tgl-btn" for="cb1-6">
                                     </div>
                                 </div>
-                                <button class="btn-add-task">
+                                <button class="btn-add-task modal-trigger">
                                     <i class="fa-solid fa-plus"></i>
                                     Ajouter une tâche
                                 </button>
@@ -155,7 +157,7 @@
                                         <td>10/03/2026</td>
                                         <td><span class="status completed">En cours</span></td>
                                         <td>
-                                            <ul class="tag">
+                                            <ul class="tag-list">
                                                 <li>Urgent</li>
                                                 <li>Web</li>
                                             </ul>
@@ -173,7 +175,7 @@
                                         <td>15/03/2026</td>
                                         <td><span class="status in-progress">En cours</span></td>
                                         <td>
-                                            <ul class="tag">
+                                            <ul class="tag-list">
                                                 <li>Bases</li>
                                                 <li>Important</li>
                                             </ul>
@@ -191,7 +193,7 @@
                                         <td>20/03/2026</td>
                                         <td><span class="status pending">À faire</span></td>
                                         <td>
-                                            <ul class="tag">
+                                            <ul class="tag-list">
                                                 <li>Doc</li>
                                                 <li>Low-prio</li>
                                             </ul>
@@ -211,9 +213,198 @@
         </main>
     </section>
 
-    <div class="modal">
+    <div class="modal-container" id="modalContainer">
+        <div class="overlay modal-trigger"></div>
+        <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="dialogDesc">
+            <button class="close-modal modal-trigger" aria-label="close modal">x</button>
+            <h1 id="modalTitle">Ajouter une Taches</h1>
+            <p id="dialogDesc">Ajouter un taches a finir</p>
 
+            <form id="calendarForm" class="calendarForm">
+                <div class="calendar-form">
+                    <div class="form-left">
+
+                        <label for="dateInput">Titre de l'evenement :</label>
+                        <input type="text" placeholder="Nom de l'événement">
+
+                        <label for="dateEndInput">Description :</label>
+                        <textarea name="" id=""></textarea>
+
+                        <label for="dateEndInput">Tag :</label>
+                        <div class="tag-area">
+                            <ul>
+                                <input type="text" class="tag-input" id="tag-input" />
+                            </ul>
+                        </div>
+
+                        <label for="dateInput">Date :</label>
+                        <input type="date" id="dateInput" name="dateInput" required>
+                    </div>
+
+                    <div class="form-right">
+
+                        <label for="colorInput">Responsable :</label>
+                        <div class="custom-select">
+                            <div class="select-selected">
+                                <img src="https://i.pravatar.cc/40?img=1" alt="Avatar">
+                                <span>Alice</span>
+                                <span style="margin-left:auto;">▼</span>
+                            </div>
+                            <div class="select-items">
+                                <div class="select-item" data-value="1">
+                                    <img src="https://i.pravatar.cc/40?img=1" alt="Alice"> Alice
+                                </div>
+                                <div class="select-item" data-value="2">
+                                    <img src="https://i.pravatar.cc/40?img=2" alt="Bob"> Bob
+                                </div>
+                                <div class="select-item" data-value="3">
+                                    <img src="https://i.pravatar.cc/40?img=3" alt="Charlie"> Charlie
+                                </div>
+                                <div class="select-item" data-value="4">
+                                    <img src="https://i.pravatar.cc/40?img=4" alt="Diana"> Diana
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <button type="submit" class="submit-btn">Ajouter</button>
+            </form>
+        </div>
     </div>
 </body>
+<script>
+    const modalContainer = document.querySelector(".modal-container");
+    const modalTriggers = document.querySelectorAll(".modal-trigger");
+
+    modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal))
+
+    function toggleModal() {
+        modalContainer.classList.toggle("active")
+    }
+
+</script>
+
+<script>
+    // @link https://github.com/hicodersofficial/custom-html-css-js-widgets/tree/main/tag-input-field
+    // INSTAGRAM: @hi.coders
+    //https://foolishdeveloper.com/tags-input-box-html-css-javascript/
+
+    const tagInput = document.querySelector(".tag-input");
+    const tagArea = document.querySelector(".tag-area");
+    const ul = document.querySelector(".tag-area ul");
+    const label = document.querySelector(".label");
+
+    let tags = [];
+
+    function addEvent(element) {
+        tagArea.addEventListener("click", () => {
+            element.focus();
+        });
+
+
+        element.addEventListener("blur", (e) => {
+            tagArea.classList.remove("active");
+            if (element.value === "" && tags.length === 0) {
+                label.classList.remove("label-active");
+            }
+            if (!element.value.match(/^\s+$/gi) && element.value !== "") {
+                tags.push(e.target.value.trim());
+                element.value = "";
+                renderTags();
+            }
+        });
+        /**
+         * NOTE: Keyboard events works unexpected on mobile devices.
+         * For mobile devices you need to add this code
+         * to get the last character user entered.
+         * value[value.length - 1] === " "
+         *
+         * keycode 32 is for SpaceBar
+         * keycode 13 is for EnterKey
+         */
+
+        element.addEventListener("keydown", (e) => {
+            console.log(e);
+            const value = e.target.value;
+            if (
+                (e.keyCode === 32 ||
+                    e.keyCode === 13 ||
+                    value[value.length - 1] === " ") &&
+                !value.match(/^\s+$/gi) &&
+                value !== ""
+            ) {
+                tags.push(e.target.value.trim());
+                element.value = "";
+                renderTags();
+            }
+            if (e.keyCode === 8 && value === "") {
+                tags.pop();
+                renderTags();
+            }
+        });
+    }
+    addEvent(tagInput);
+
+    function renderTags() {
+        ul.innerHTML = "";
+        tags.forEach((tag, index) => {
+            createTag(tag, index);
+        });
+        const input = document.createElement("input");
+        input.type = "text";
+        input.className = "tag-input";
+        addEvent(input);
+        ul.appendChild(input);
+        input.focus();
+        setTimeout(() => (input.value = ""), 0);
+    }
+
+    function createTag(tag, index) {
+        const li = document.createElement("li");
+        li.className = "tag";
+        const text = document.createTextNode(tag);
+        const span = document.createElement("span");
+        span.className = "cross";
+        span.dataset.index = index;
+        span.addEventListener("click", (e) => {
+            tags = tags.filter((_, index) => index != e.target.dataset.index);
+            renderTags();
+        });
+        li.appendChild(text);
+        li.appendChild(span);
+        ul.appendChild(li);
+    }
+</script>
+
+<script>
+const select = document.querySelector('.custom-select');
+const selected = select.querySelector('.select-selected');
+const items = select.querySelector('.select-items');
+const options = select.querySelectorAll('.select-item');
+
+// Toggle dropdown
+selected.addEventListener('click', () => {
+  items.style.display = items.style.display === 'block' ? 'none' : 'block';
+});
+
+// Select option
+options.forEach(option => {
+  option.addEventListener('click', () => {
+    const img = option.querySelector('img').src;
+    const name = option.textContent.trim();
+    selected.querySelector('img').src = img;
+    selected.querySelector('span').textContent = name;
+    items.style.display = 'none';
+  });
+});
+
+// Close dropdown if clicked outside
+document.addEventListener('click', (e) => {
+  if (!select.contains(e.target)) {
+    items.style.display = 'none';
+  }
+});
+</script>
 
 </html>
