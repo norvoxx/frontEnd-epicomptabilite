@@ -140,8 +140,9 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Tâche</th>
+                                            <th>Description</th>
                                             <th>Client</th>
+                                            <th>Montant</th>
                                             <th>Date limite</th>
                                             <th>Statut</th>
                                             <th>Actions</th>
@@ -149,38 +150,40 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Finir le site</td>
+                                            <td>INV-2025-003</td>
+                                            <td>Finir le site lore</td>
                                             <td>Norvoxx</td>
+                                            <td>200.00€</td>
                                             <td>10/03/2026</td>
-                                            <td><span class="status completed">En cours</span></td>
-
+                                            <td><span class="status completed">Payer</span></td>
                                             <td>
-                                                <i class="fa-regular fa-message edit"></i>
+                                                <i class="fa-solid fa-download edit"></i>
                                                 <i class="fa-solid fa-pen-to-square edit"></i>
                                                 <i class="fa-solid fa-trash delete"></i>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>2</td>
+                                            <td>INV-2025-002</td>
                                             <td>Mettre à jour la base de données</td>
                                             <td>toto</td>
+                                            <td>200.00€</td>
                                             <td>15/03/2026</td>
-                                            <td><span class="status in-progress">En cours</span></td>
+                                            <td><span class="status in-progress">en attente</span></td>
                                             <td>
-                                                <i class="fa-regular fa-message edit"></i>
+                                                <i class="fa-solid fa-download edit"></i>
                                                 <i class="fa-solid fa-pen-to-square edit"></i>
                                                 <i class="fa-solid fa-trash delete"></i>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>3</td>
+                                            <td>INV-2025-013</td>
                                             <td>Créer la documentation</td>
                                             <td>Panw</td>
+                                            <td>200.00€</td>
                                             <td>20/03/2026</td>
-                                            <td><span class="status pending">À faire</span></td>
+                                            <td><span class="status in-progress">en attente</span></td>
                                             <td>
-                                                <i class="fa-regular fa-message edit"></i>
+                                                <i class="fa-solid fa-download edit"></i>
                                                 <i class="fa-solid fa-pen-to-square edit"></i>
                                                 <i class="fa-solid fa-trash delete"></i>
 
@@ -192,17 +195,28 @@
                         </div>
                     </div>
                     <div class="box facture-add">
-                        <label for="dateEndInput">Titre de facture : </label>
-                        <input type="text" placeholder="Titre de la facture" id="dateEndInput" name="dateEndInput"
-                            required>
+                        <h3>Créer une nouvelle facture</h3>
 
-                        <label for="dateEndInput">Nom du clients : </label>
-                        <input type="text" placeholder="Titre de la facture" id="dateEndInput" name="dateEndInput"
-                            required>
+                        <label for="facture-titre">Titre de facture</label>
+                        <input type="text" id="facture-titre" placeholder="Ex: Facture site web">
 
-                        <label for="dateEndInput">Titre de facture : </label>
-                        <input type="text" placeholder="Titre de la facture" id="dateEndInput" name="dateEndInput"
-                            required>
+                        <label for="facture-numero">Numéro de facture</label>
+                        <input type="text" id="facture-numero" placeholder="Ex: F-2026-001">
+
+                        <label for="facture-date">Date</label>
+                        <input type="date" id="facture-date">
+
+                        <div class="add-facture-header-article">
+                            <div class="aricles-list"></div>
+
+                            <button class="add-article-btn">
+                                + Ajouter un article
+                            </button>
+                        </div>
+
+                        <button class="submit-btn">
+                            Créer la facture
+                        </button>
 
                     </div>
                 </div>
@@ -210,5 +224,55 @@
         </main>
     </section>
 </body>
+
+<script>
+    const articleAdd = document.querySelector(".add-article-btn")
+    const articleList = document.querySelector(".aricles-list")
+
+    let articleCmp = 0;
+
+    function addFactureConfig() {
+        let el = `
+    <div class="add-facture-header-groups article">
+    <div class="article-header">
+        <label>Article / Service</label>
+        <button type="button" id="article-toggle" onclick="toggleProduit(${articleCmp})" class="toggle-article toggle-${articleCmp}">▼</button>
+    </div>
+    <div class="article-content article-${articleCmp}">
+        <div>
+            <div class="article-titre">
+                <input type="text" id="article-titre-${articleCmp}" placeholder="Nom de l'article" />
+                </div>
+                <div class="article-prix">
+                    <input type="number" id="article-qte-${articleCmp}" placeholder="Qté" />
+                    <input type="number" id="article-prix-${articleCmp}" placeholder="Prix" />
+                </div>
+            </div>    
+        </div>
+    </div>
+    `;
+        articleList.insertAdjacentHTML("beforeend", el)
+        articleCmp++
+    }
+    articleAdd.addEventListener("click", () => {
+        addFactureConfig()
+    })
+
+
+    function toggleProduit(id) {
+
+        let articleContent = document.querySelector(`.article-${id}`);
+        let toggleBtn = document.querySelector(`.toggle-${id}`);
+
+        articleContent.classList.toggle("closed");
+
+        if (articleContent.classList.contains("closed")) {
+            toggleBtn.textContent = "►";
+        } else {
+            toggleBtn.textContent = "▼";
+        }
+    }
+
+</script>
 
 </html>

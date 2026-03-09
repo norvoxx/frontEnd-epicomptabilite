@@ -3,9 +3,8 @@
 }
 
 .task-table-container {
-
     padding: 20px;
-    overflow-x: auto;
+    /* overflow-x: auto; */
 }
 
 .task-table-container h2 {
@@ -91,6 +90,11 @@
 }
 
 .tag-list>li:nth-child(2) {
+    background-color: #28311b6e;
+    color: #BDE97C;
+}
+
+.tag-list>li{
     background-color: #28311b6e;
     color: #BDE97C;
 }

@@ -41,9 +41,7 @@
     flex-direction: column;
 }
 
-.facture-add input[type="text"],
-.facture-add input[type="date"],
-.facture-add input[type="time"] {
+.facture-add input {
     width: 100%;
     padding: 0.5rem;
     margin-top: 0.5rem;
@@ -106,4 +104,95 @@
     height: 100%;
     gap: 20px;
     display: flex;
+}
+
+
+.add-facture>* {
+    margin: 10px 5%;
+
+}
+
+.add-facture-header {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.add-facture-header-groups {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.article-content.closed {
+    display: none;
+}
+
+.aricles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.article {
+    background: var(--bg-couleur-spe);
+    border-radius: var(--radius);
+    padding: 10px;
+}
+
+.article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.article-content {
+    margin-top: 10px;
+}
+
+.article-titre input {
+    width: 100%;
+}
+
+.article-prix {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.article-prix input {
+    flex: 1;
+}
+
+.add-article-btn {
+    margin-top: 10px;
+    padding: 8px;
+    background: var(--special-couleur);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.add-article-btn:hover {
+    opacity: 0.9;
+}
+
+.article-content .btn-add-task {
+    margin-top: 10px;
+    width: 100%;
+    color: white;
+}
+
+.toggle-article {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--text-couleur);
 }

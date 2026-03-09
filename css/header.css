@@ -34,7 +34,8 @@ header ul li i:hover {
   transition: all 0.2s ease-in-out;
 }
 
-input {
+
+.header-search input {
   width: 40vh;
   
   border: none;
