@@ -7,6 +7,50 @@
     box-sizing: border-box;
 }
 
+.task-table-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+    height: 100%;
+    padding: 10px;
+}
+
+.task-search {
+    display: flex;
+    align-items: center;
+    background: var(--bg-couleur-overlay);
+    padding: 8px 12px;
+    border-radius: var(--radius);
+    gap: 8px;
+}
+
+.task-search input {
+    border: none;
+    background: transparent;
+    outline: none;
+    color: var(--text-couleur);
+}
+
+.btn-add-task {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--special-couleur);
+    color: var(--border-couleur);
+    border: none;
+    padding: 8px 14px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.btn-add-task:hover {
+    opacity: 0.9;
+}
+
 .card {
     min-height: 200px;
     background-color: var(--bg-couleur-spe);

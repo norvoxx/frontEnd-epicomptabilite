@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EPI Comptability</title>
     <link rel="stylesheet" href="./css/root.css" />
+
     <link rel="stylesheet" href="./css/nav-left.css" />
     <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/chekbox.css">
 
     <link rel="stylesheet" href="./css/pages/fichier.css">
 
@@ -112,6 +114,26 @@
             </section>
 
             <section class="dashboard">
+                <div class="box">
+                    <div class="task-table-nav">
+                        <div class="task-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Rechercher une tâche..." id="searchTask">
+
+                            <p>Vos fichier</p>
+                            <div class="checkbox-wrapper-6">
+                                <input class="tgl tgl-light" id="cb1-6" type="checkbox" />
+                                <label class="tgl-btn" for="cb1-6">
+                            </div>
+                        </div>
+                        <button class="btn-add-task modal-trigger">
+                            <i class="fa-solid fa-plus"></i>
+                            Ajouter une tâche
+                        </button>
+                    </div>
+
+                </div>
+
                 <div class="biblio">
                     <div class="card">
                         <div class="top-card">
@@ -177,7 +199,7 @@
                         <div class="card-meta">
                             <span class="creator">Norvoxx</span>
                             <span class="date">05/03/2026</span>
-                         
+
                         </div>
 
                     </div>
