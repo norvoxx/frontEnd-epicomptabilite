@@ -47,7 +47,7 @@ body {
   /* background-color: red; */
   height: 100%;
   padding: 30px;
-  padding-bottom: 0;
+
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -87,6 +87,7 @@ input{
 }
 
 @media (max-width: 768px) {
+
 
   .main-container {
     padding-left: 30px;

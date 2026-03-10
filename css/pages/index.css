@@ -110,12 +110,12 @@
 }
 
 @media (max-width: 768px) {
-  /* .top-box>div {
+  .top-box>div {
     flex: 1 1 100%;
-  } */
+  }
 
   .top-box .box{
-    width: 50px;
+    width: 500px;
   }
   .event-box {
     flex-direction: column;
