@@ -37,7 +37,8 @@ body {
   padding-left: 80px;
   /* background-color: aqua; */
 
-  min-height: 100vh;
+  height: 100vh;
+  overflow-x: auto;
   width: 100%;
 
   display: flex;
@@ -87,7 +88,6 @@ input{
 }
 
 @media (max-width: 768px) {
-
 
   .main-container {
     padding-left: 30px;
