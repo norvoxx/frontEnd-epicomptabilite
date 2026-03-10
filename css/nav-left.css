@@ -107,6 +107,9 @@
 }
 
 @media (max-width: 768px) {
+  .container-nav-left{
+    height: 100%;
+  }
   li>p {
     display: none;
   }
