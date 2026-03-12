@@ -165,7 +165,7 @@
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="t-body">
                                     <tr>
                                         <td>1</td>
                                         <td>Finir le site</td>
@@ -342,7 +342,7 @@
          */
 
         element.addEventListener("keydown", (e) => {
-            console.log(e);
+           
             const value = e.target.value;
             if (
                 (e.keyCode === 32 ||
@@ -422,6 +422,24 @@ document.addEventListener('click', (e) => {
     items.style.display = 'none';
   }
 });
+
+//barre de recherche
+const search = document.getElementById('searchTask')
+const liste = document.getElementById('t-body')
+const liste2 = liste.querySelectorAll('tr')
+
+search.addEventListener("input" , (e) => {
+    let recherche = e.target.value.toLowerCase()
+    liste2.forEach((obj) => {
+        let text = obj.querySelectorAll('td')[1].innerText.toLowerCase()
+        // if (!text.includes)
+
+
+        console.log(text.includes("tr"))
+    })
+})
+
+
 </script>
 
 </html>
