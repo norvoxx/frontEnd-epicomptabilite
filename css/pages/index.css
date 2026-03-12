@@ -13,15 +13,18 @@
 
 .number-box {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   font-size: 1.5em;
+  margin-top: 20px;
 }
 .top-box .box i {
-  position: fixed;
-  right: 20px;
-  top: calc(50% - (2em / 3));
-  font-size: 2em;
+  display: flex;
+  float: right;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 3em;
 }
 
 .top-box .box-actif i {
