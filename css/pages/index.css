@@ -17,7 +17,7 @@
   align-items: center;
   font-size: 1.5em;
 }
-.box i {
+.top-box .box i {
   position: fixed;
   right: 20px;
   top: calc(50% - (2em / 3));
