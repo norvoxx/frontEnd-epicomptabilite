@@ -30,71 +30,71 @@
                     </div>
                 </div>
                 <ul>
-            <!-- i acceuil-->
-            <li>
-              <a href="/index.html">
-                <i class="fa-solid fa-house"></i>
-                <p>Accueil</p>
-              </a>
-            </li>
+                    <!-- i acceuil-->
+                    <li>
+                        <a href="/index.html">
+                            <i class="fa-solid fa-house"></i>
+                            <p>Accueil</p>
+                        </a>
+                    </li>
 
-            <!-- i calendrier-->
-            <li>
-              <a href="/calendrier.html">
-                <i class="fa-solid fa-calendar-days"></i>
-                <p>Calendrier</p>
-              </a>
-            </li>
+                    <!-- i calendrier-->
+                    <li>
+                        <a href="/calendrier.html">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <p>Calendrier</p>
+                        </a>
+                    </li>
 
-            <!-- i taches-->
-            <li>
-              <a href="/taches.html">
-                <i class="fa-solid fa-list-check"></i>
-                <p>Tâches</p>
-              </a>
-            </li>
+                    <!-- i taches-->
+                    <li>
+                        <a href="/taches.html">
+                            <i class="fa-solid fa-list-check"></i>
+                            <p>Tâches</p>
+                        </a>
+                    </li>
 
-            <!-- i discord-->
-            <li>
-              <a href="#">
-                <i class="fa-brands fa-discord"></i>
-                <p>Discord</p>
-              </a>
-            </li>
+                    <!-- i discord-->
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-discord"></i>
+                            <p>Discord</p>
+                        </a>
+                    </li>
 
-            <!-- i fichier-->
-            <li>
-              <a href="/fichier.html">
-                <i class="fa-solid fa-folder"></i>
-                <p>Fichier</p>
-              </a>
-            </li>
+                    <!-- i fichier-->
+                    <li>
+                        <a href="/fichier.html">
+                            <i class="fa-solid fa-folder"></i>
+                            <p>Fichier</p>
+                        </a>
+                    </li>
 
-            <!-- i facture-->
+                    <!-- i facture-->
 
-            <li>
-              <a href="/facture.html">
-                <i class="fa-solid fa-file-invoice-dollar"></i>
-                <p>Facture</p>
-              </a>
-            </li>
+                    <li>
+                        <a href="/facture.html">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                            <p>Facture</p>
+                        </a>
+                    </li>
 
-            <!-- i user-->
-            <li>
-              <a href="#">
-                <i class="fa-solid fa-user"></i>
-                <p>User</p>
-              </a>
-            </li>
+                    <!-- i user-->
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-user"></i>
+                            <p>User</p>
+                        </a>
+                    </li>
 
-            <!-- i admin-->
-            <li>
-              <a href="/admin.html">
-                <i class="fa-solid fa-gear"></i>
-                <p>Admin</p>
-              </a>
-            </li>
-          </ul>
+                    <!-- i admin-->
+                    <li>
+                        <a href="/admin.html">
+                            <i class="fa-solid fa-gear"></i>
+                            <p>Admin</p>
+                        </a>
+                    </li>
+                </ul>
             </div>
             <div class="nav-login">
                 <div><img src="./imgs/logoNorvoxx.png" alt="" /></div>
@@ -279,7 +279,7 @@
                                 <div class="select-item" data-value="4">
                                     <img src="https://i.pravatar.cc/40?img=4" alt="Diana"> Diana
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -342,7 +342,7 @@
          */
 
         element.addEventListener("keydown", (e) => {
-           
+
             const value = e.target.value;
             if (
                 (e.keyCode === 32 ||
@@ -395,52 +395,51 @@
 </script>
 
 <script>
-const select = document.querySelector('.custom-select');
-const selected = select.querySelector('.select-selected');
-const items = select.querySelector('.select-items');
-const options = select.querySelectorAll('.select-item');
+    const select = document.querySelector('.custom-select');
+    const selected = select.querySelector('.select-selected');
+    const items = select.querySelector('.select-items');
+    const options = select.querySelectorAll('.select-item');
 
-// Toggle dropdown
-selected.addEventListener('click', () => {
-  items.style.display = items.style.display === 'block' ? 'none' : 'block';
-});
+    // Toggle dropdown
+    selected.addEventListener('click', () => {
+        items.style.display = items.style.display === 'block' ? 'none' : 'block';
+    });
 
-// Select option
-options.forEach(option => {
-  option.addEventListener('click', () => {
-    const img = option.querySelector('img').src;
-    const name = option.textContent.trim();
-    selected.querySelector('img').src = img;
-    selected.querySelector('span').textContent = name;
-    items.style.display = 'none';
-  });
-});
+    // Select option
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            const img = option.querySelector('img').src;
+            const name = option.textContent.trim();
+            selected.querySelector('img').src = img;
+            selected.querySelector('span').textContent = name;
+            items.style.display = 'none';
+        });
+    });
 
-// Close dropdown if clicked outside
-document.addEventListener('click', (e) => {
-  if (!select.contains(e.target)) {
-    items.style.display = 'none';
-  }
-});
+    // Close dropdown if clicked outside
+    document.addEventListener('click', (e) => {
+        if (!select.contains(e.target)) {
+            items.style.display = 'none';
+        }
+    });
 
-//barre de recherche
-const search = document.getElementById('searchTask')
-const liste = document.getElementById('t-body')
-const liste2 = liste.querySelectorAll('tr')
+    //barre de recherche
+    const search = document.getElementById('searchTask')
+    const liste = document.getElementById('t-body')
+    const liste2 = liste.querySelectorAll('tr')
 
-search.addEventListener("input" , (e) => {
-    let recherche = e.target.value.toLowerCase()
-    liste2.forEach((obj) => {
-        let text = obj.querySelectorAll('td')[1].innerText.toLowerCase()
-        if (!text.includes(recherche)){
-            obj.classList.add("inactif")
-        } else (
-            obj.classList.remove("inactif")
-        )
+    search.addEventListener("input", (e) => {
+        let recherche = e.target.value.toLowerCase()
+        liste2.forEach((obj) => {
+            let text = obj.querySelectorAll('td')[1].innerText.toLowerCase()
+            let name = obj.querySelectorAll('td')[2].innerText.toLowerCase()
+            if (!(text.includes(recherche) || name.includes(recherche))) {
+                obj.classList.add("inactif")
+            } else (
+                obj.classList.remove("inactif")
+            )
+        })
     })
-})
-
-
 </script>
 
 </html>
