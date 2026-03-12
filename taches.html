@@ -432,10 +432,11 @@ search.addEventListener("input" , (e) => {
     let recherche = e.target.value.toLowerCase()
     liste2.forEach((obj) => {
         let text = obj.querySelectorAll('td')[1].innerText.toLowerCase()
-        // if (!text.includes)
-
-
-        console.log(text.includes("tr"))
+        if (!text.includes(recherche)){
+            obj.classList.add("inactif")
+        } else (
+            obj.classList.remove("inactif")
+        )
     })
 })
 
