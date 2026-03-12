@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EPI Comptability</title>
@@ -9,244 +8,270 @@
     <link rel="stylesheet" href="./css/nav-left.css" />
     <link rel="stylesheet" href="./css/header.css" />
 
-    <link rel="stylesheet" href="./css/pages/calendrier.css">
+    <link rel="stylesheet" href="./css/pages/calendrier.css" />
 
-    <link rel="stylesheet" href="./css/modals/root.css">
+    <link rel="stylesheet" href="./css/modals/root.css" />
 
     <!-- <link rel="stylesheet" href="./css/main.css" /> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.js'></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.20/index.global.min.js"></script>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var calendarEl = document.getElementById('calendar');
+      document.addEventListener("DOMContentLoaded", function () {
+        var calendarEl = document.getElementById("calendar");
 
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                headerToolbar: {
-                    start: 'dayGridMonth,timeGridWeek',
-                    center: 'title',
-                    end: 'prev,next',
-                    initialView: 'dayGridMonth',
-                },
-                height: "100%",
-                locale: 'fr',
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          headerToolbar: {
+            start: "dayGridMonth,timeGridWeek",
+            center: "title",
+            end: "prev,next",
+            initialView: "dayGridMonth",
+          },
+          height: "100%",
+          locale: "fr",
 
+          editable: true,
+          eventResizableFromStart: true,
+          selectable: true,
+          selectMirror: true,
 
-                editable: true,
-                eventResizableFromStart: true,
-                selectable: true,
-                selectMirror: true,
+          events: [
+            {
+              id: "1",
+              title: "Déplaçable",
+              start: "2026-02-10",
+            },
+            {
+              id: "1",
+              title: "Déplaçable",
+              start: "2026-02-10",
+              editable: false,
+              durationEditable: false,
+            },
+            {
+              id: "2",
+              title: "Avec heure",
+              start: "2026-02-12T09:00:00",
+              end: "2026-02-12T11:00:00",
+            },
+          ],
+          eventDrop: function (info) {
+            alert(
+              "Événement déplacé !\n" +
+                "Ancienne date : " +
+                info.oldEvent.startStr +
+                "\n" +
+                "Nouvelle date : " +
+                info.event.startStr,
+            );
+          },
+          eventResize: function (info) {
+            alert("Durée modifiée !\n" + "Nouvelle fin : " + info.event.endStr);
+          },
+          eventClick: function (info) {
+            alert("Événement cliqué : " + info.event.title);
+          },
 
-                events: [
-                    {
-                        id: '1',
-                        title: 'Déplaçable',
-                        start: '2026-02-10'
-                    },
-                    {
-                        id: '1',
-                        title: 'Déplaçable',
-                        start: '2026-02-10',
-                        editable: false,
-                        durationEditable: false
-                    },
-                    {
-                        id: '2',
-                        title: 'Avec heure',
-                        start: '2026-02-12T09:00:00',
-                        end: '2026-02-12T11:00:00'
-                    }
-                ],
-                eventDrop: function (info) {
-                    alert(
-                        'Événement déplacé !\n' +
-                        'Ancienne date : ' + info.oldEvent.startStr + '\n' +
-                        'Nouvelle date : ' + info.event.startStr
-                    );
+          dateClick: function (info) {
+            alert("Date cliquée : " + info.dateStr);
 
-                },
-                eventResize: function (info) {
-                    alert(
-                        'Durée modifiée !\n' +
-                        'Nouvelle fin : ' + info.event.endStr
-                    );
-                },
-                eventClick: function (info) {
-                    alert('Événement cliqué : ' + info.event.title);
-                },
-
-                dateClick: function (info) {
-                    alert(
-                        'Date cliquée : ' + info.dateStr
-                    );
-
-                    console.log(info);
-                }
-            });
-
-            calendar.render();
+            console.log(info);
+          },
         });
+
+        calendar.render();
+      });
     </script>
     <section class="container-nav-left">
-        <nav class="nav-left">
-            <div>
-                <div class="container-title">
-                    <!-- <img class="nav-logo" src="/imgs/logo.png" alt="logo" /> -->
-                    <div class="title-text">
-                        <span class="main-title">EPI<span>-Studio</span></span>
-                        <span class="subtitle">Associasion Techologique</span>
-                    </div>
-                </div>
-                <ul>
-                    <!-- i acceuil-->
-                    <li>
-                        <i class="fa-solid fa-house"></i>
-                        <p>Accueil</p>
-                    </li>
-
-                    <!-- i calendrier-->
-                    <li>
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <p>Calendrier</p>
-                    </li>
-
-                    <!-- i taches-->
-                    <li>
-                        <i class="fa-solid fa-list-check"></i>
-                        <p>Tâches</p>
-                    </li>
-
-                    <!-- i discord-->
-                    <li>
-                        <i class="fa-brands fa-discord"></i>
-                        <p>Discord</p>
-                    </li>
-
-                    <!-- i fichier-->
-                    <li>
-                        <i class="fa-solid fa-folder"></i>
-                        <p>Fichier</p>
-                    </li>
-
-                    <!-- i facture-->
-
-                    <li>
-                        <i class="fa-solid fa-file-invoice-dollar"></i>
-                        <p>Facture</p>
-                    </li>
-
-                    <!-- i user-->
-                    <li>
-                        <i class="fa-solid fa-user"></i>
-                        <p>User</p>
-                    </li>
-
-                    <!-- i admin-->
-                    <li>
-                        <i class="fa-solid fa-gear"></i>
-                        <p>Admin</p>
-                    </li>
-                </ul>
+      <nav class="nav-left">
+        <div>
+          <div class="container-title">
+            <!-- <img class="nav-logo" src="/imgs/logo.png" alt="logo" /> -->
+            <div class="title-text">
+              <span class="main-title">EPI<span>-Studio</span></span>
+              <span class="subtitle">Associasion Techologique</span>
             </div>
-            <div class="nav-login">
-                <div><img src="./imgs/logoNorvoxx.png" alt="" /></div>
-                <div>
-                    <p>Norvoxx</p>
-                    <p class="subtitle">Dev web</p>
-                </div>
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </nav>
+          </div>
+          <ul>
+            <!-- i acceuil-->
+            <li>
+              <a href="/index.html">
+                <i class="fa-solid fa-house"></i>
+                <p>Accueil</p>
+              </a>
+            </li>
+
+            <!-- i calendrier-->
+            <li>
+              <a href="/calendrier.html">
+                <i class="fa-solid fa-calendar-days"></i>
+                <p>Calendrier</p>
+              </a>
+            </li>
+
+            <!-- i taches-->
+            <li>
+              <a href="/taches.html">
+                <i class="fa-solid fa-list-check"></i>
+                <p>Tâches</p>
+              </a>
+            </li>
+
+            <!-- i discord-->
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-discord"></i>
+                <p>Discord</p>
+              </a>
+            </li>
+
+            <!-- i fichier-->
+            <li>
+              <a href="/fichier.html">
+                <i class="fa-solid fa-folder"></i>
+                <p>Fichier</p>
+              </a>
+            </li>
+
+            <!-- i facture-->
+
+            <li>
+              <a href="/facture.html">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <p>Facture</p>
+              </a>
+            </li>
+
+            <!-- i user-->
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-user"></i>
+                <p>User</p>
+              </a>
+            </li>
+
+            <!-- i admin-->
+            <li>
+              <a href="/admin.html">
+                <i class="fa-solid fa-gear"></i>
+                <p>Admin</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-login">
+          <div><img src="./imgs/logoNorvoxx.png" alt="" /></div>
+          <div>
+            <p>Norvoxx</p>
+            <p class="subtitle">Dev web</p>
+          </div>
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </nav>
     </section>
 
     <section class="main-container">
-        <main class="main-container">
-            <section class="header-container">
-                <header>
-                    <div class="header-search">
-                        <input type="text" placeholder="Recheche Action / taches ..." />
-                        <!-- https://fontawesome.com/icons/magnifying-glass?f=classic&s=solid -->
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </div>
-                    <ul>
-                        <li>
-                            <!-- https://fontawesome.com/icons/bell?f=classic&s=solid -->
-                            <i class="fa-solid fa-bell"></i>
-                        </li>
-                        <li>
-                            <!-- https://fontawesome.com/icons/bars?f=classic&s=solid -->
-                            <!-- https://fontawesome.com/icons/ellipsis-vertical?f=classic&s=solid -->
-                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </li>
-                    </ul>
-                </header>
-            </section>
-
-            <section class="dashboard">
-                <div class="box">
-                    <div class="calendar" id='calendar'></div> <button class="modal-btn modal-trigger">Open</button>
-                </div>
-            </section>
-        </main>
-        <div class="modal-container" id="modalContainer">
-            <div class="overlay modal-trigger"></div>
-            <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="dialogDesc">
-                <button class="close-modal modal-trigger" aria-label="close modal">x</button>
-                <h1 id="modalTitle">Ajouter une date</h1>
-                <p id="dialogDesc">Sélectionnez une date à ajouter dans le calendrier.</p>
-
-                <form id="calendarForm" class="calendarForm">
-                    <div class="calendar-form">
-                        <div class="form-left">
-
-                            <label for="dateInput">Titre de l'evenement :</label>
-                            <input type="text" placeholder="Nom de l'événement">
-
-                            <label for="dateEndInput">Description :</label>
-
-                            <textarea name="" id=""></textarea>
-
-                            <label for="dateInput">Date :</label>
-                            <input type="date" id="dateInput" name="dateInput" required>
-
-                            <label for="dateInput">Heure :</label>
-                            <input type="time" id="dateInput" name="dateInput" required>
-
-
-                            <label for="dateEndInput">Jusqu'à :</label>
-                            <input type="date" id="dateEndInput" name="dateEndInput" required>
-
-
-                        </div>
-
-                        <div class="form-right">
-
-                            <label for="colorInput">Couleur :</label>
-                            <input type="color" id="colorInput" name="colorInput" value="#ff0000">
-                        </div>
-
-                    </div>
-                    <button type="submit" class="submit-btn">Ajouter</button>
-                </form>
+      <main class="main-container">
+        <section class="header-container">
+          <header>
+            <div class="header-search">
+              <input type="text" placeholder="Recheche Action / taches ..." />
+              <!-- https://fontawesome.com/icons/magnifying-glass?f=classic&s=solid -->
+              <i class="fa-solid fa-magnifying-glass"></i>
             </div>
+            <ul>
+              <li>
+                <!-- https://fontawesome.com/icons/bell?f=classic&s=solid -->
+                <i class="fa-solid fa-bell"></i>
+              </li>
+              <li>
+                <!-- https://fontawesome.com/icons/bars?f=classic&s=solid -->
+                <!-- https://fontawesome.com/icons/ellipsis-vertical?f=classic&s=solid -->
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </li>
+            </ul>
+          </header>
+        </section>
+
+        <section class="dashboard">
+          <div class="box">
+            <div class="calendar" id="calendar"></div>
+            <button class="modal-btn modal-trigger">Open</button>
+          </div>
+        </section>
+      </main>
+      <div class="modal-container" id="modalContainer">
+        <div class="overlay modal-trigger"></div>
+        <div
+          class="modal"
+          role="dialog"
+          aria-labelledby="modalTitle"
+          aria-describedby="dialogDesc"
+        >
+          <button class="close-modal modal-trigger" aria-label="close modal">
+            x
+          </button>
+          <h1 id="modalTitle">Ajouter une date</h1>
+          <p id="dialogDesc">
+            Sélectionnez une date à ajouter dans le calendrier.
+          </p>
+
+          <form id="calendarForm" class="calendarForm">
+            <div class="calendar-form">
+              <div class="form-left">
+                <label for="dateInput">Titre de l'evenement :</label>
+                <input type="text" placeholder="Nom de l'événement" />
+
+                <label for="dateEndInput">Description :</label>
+
+                <textarea name="" id=""></textarea>
+
+                <label for="dateInput">Date :</label>
+                <input type="date" id="dateInput" name="dateInput" required />
+
+                <label for="dateInput">Heure :</label>
+                <input type="time" id="dateInput" name="dateInput" required />
+
+                <label for="dateEndInput">Jusqu'à :</label>
+                <input
+                  type="date"
+                  id="dateEndInput"
+                  name="dateEndInput"
+                  required
+                />
+              </div>
+
+              <div class="form-right">
+                <label for="colorInput">Couleur :</label>
+                <input
+                  type="color"
+                  id="colorInput"
+                  name="colorInput"
+                  value="#ff0000"
+                />
+              </div>
+            </div>
+            <button type="submit" class="submit-btn">Ajouter</button>
+          </form>
         </div>
-
+      </div>
     </section>
-
-</body>
-<script>
+  </body>
+  <script>
     const modalContainer = document.querySelector(".modal-container");
     const modalTriggers = document.querySelectorAll(".modal-trigger");
 
-    modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal))
+    modalTriggers.forEach((trigger) =>
+      trigger.addEventListener("click", toggleModal),
+    );
 
     function toggleModal() {
-        modalContainer.classList.toggle("active")
+      modalContainer.classList.toggle("active");
     }
-
-</script>
-
+  </script>
 </html>
