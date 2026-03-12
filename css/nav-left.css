@@ -108,7 +108,7 @@
 }
 
 @media (max-width: 768px) {
-  li > p {
+  li a > p {
     display: none;
   }
 
