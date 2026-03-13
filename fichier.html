@@ -158,7 +158,7 @@
 
                         <div class="file-info">
                             <i class="fa-solid fa-file-pdf"></i>
-                            <p>Document1.pdf</p>
+                            <p class="file-name">Document1.pdf</p>
                         </div>
 
                         <div class="card-meta">
@@ -175,7 +175,7 @@
 
                         <div class="file-info">
                             <i class="fa-solid fa-file-image"></i>
-                            <p>logo.png</p>
+                            <p class="file-name">logo.png</p>
                         </div>
 
                         <div class="card-meta">
@@ -192,7 +192,7 @@
 
                         <div class="file-info">
                             <i class="fa-solid fa-file-word"></i>
-                            <p>Document1.odt</p>
+                            <p class="file-name">Document1.odt</p>
                         </div>
 
                         <div class="card-meta">
@@ -209,7 +209,7 @@
 
                         <div class="file-info">
                             <i class="fa-solid fa-folder"></i>
-                            <p>Folder 1</p>
+                            <p class="file-name">Folder 1</p>
                         </div>
 
                         <div class="card-meta">
@@ -223,6 +223,31 @@
             </section>
         </main>
     </section>
+    <script>
+        const search = document.getElementById("searchTask");
+        const cards = document.querySelectorAll('.card');
+
+        search.addEventListener('input', (e) => {
+            let recherche = e.target.value.toLowerCase();
+            cards.forEach((card) => {
+                let name = document.querySelector(".file-name").innerText.toLowerCase();
+                let creator = document.querySelector(".creator").innerText.toLowerCase();
+                let date = document.querySelector(".date").innerText.toLowerCase();
+                if (
+                    !(
+                        name.includes(recherche) ||
+                        creator.includes(recherche) ||
+                        date.includes(recherche) 
+                        
+                    )  
+                ) {
+                    card.classList.add('inactif');
+                } else
+                     card.classList.remove('inactif');
+          
+            })
+        })
+    </script>
 </body>
 
 </html>
