@@ -47,7 +47,7 @@
 }
 
 .facture-add {
-  width: 600px;
+  width: 40%;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -205,4 +205,15 @@
   cursor: pointer;
   font-size: 16px;
   color: var(--text-couleur);
+}
+
+@media (max-width: 768px) {
+
+  .toto{
+    flex-direction: column;
+  }
+  .facture-add{
+    width: 100%;
+  }
+
 }
