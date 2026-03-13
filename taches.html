@@ -423,23 +423,24 @@
         }
     });
 
-    //barre de recherche
-    const search = document.getElementById('searchTask')
-    const liste = document.getElementById('t-body')
-    const liste2 = liste.querySelectorAll('tr')
+    // //barre de recherche
+    // const search = document.getElementById('searchTask')
+    // const liste = document.getElementById('t-body')
+    // const liste2 = liste.querySelectorAll('tr')
 
-    search.addEventListener("input", (e) => {
-        let recherche = e.target.value.toLowerCase()
-        liste2.forEach((obj) => {
-            let text = obj.querySelectorAll('td')[1].innerText.toLowerCase()
-            let name = obj.querySelectorAll('td')[2].innerText.toLowerCase()
-            if (!(text.includes(recherche) || name.includes(recherche))) {
-                obj.classList.add("inactif")
-            } else (
-                obj.classList.remove("inactif")
-            )
-        })
-    })
+    // search.addEventListener("input", (e) => {
+    //     let recherche = e.target.value.toLowerCase()
+    //     liste2.forEach((obj) => {
+    //         let text = obj.querySelectorAll('td')[1].innerText.toLowerCase()
+    //         let name = obj.querySelectorAll('td')[2].innerText.toLowerCase()
+    //         if (!(text.includes(recherche) || name.includes(recherche))) {
+    //             obj.classList.add("inactif")
+    //         } else (
+    //             obj.classList.remove("inactif")
+    //         )
+    //     })
+    // })
 </script>
+<script src="/JS/search.js"></script>
 
 </html>
