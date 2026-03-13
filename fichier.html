@@ -28,72 +28,72 @@
                         <span class="subtitle">Associasion Techologique</span>
                     </div>
                 </div>
-                  <ul>
-            <!-- i acceuil-->
-            <li>
-              <a href="/index.html">
-                <i class="fa-solid fa-house"></i>
-                <p>Accueil</p>
-              </a>
-            </li>
+                <ul>
+                    <!-- i acceuil-->
+                    <li>
+                        <a href="/index.html">
+                            <i class="fa-solid fa-house"></i>
+                            <p>Accueil</p>
+                        </a>
+                    </li>
 
-            <!-- i calendrier-->
-            <li>
-              <a href="/calendrier.html">
-                <i class="fa-solid fa-calendar-days"></i>
-                <p>Calendrier</p>
-              </a>
-            </li>
+                    <!-- i calendrier-->
+                    <li>
+                        <a href="/calendrier.html">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <p>Calendrier</p>
+                        </a>
+                    </li>
 
-            <!-- i taches-->
-            <li>
-              <a href="/taches.html">
-                <i class="fa-solid fa-list-check"></i>
-                <p>Tâches</p>
-              </a>
-            </li>
+                    <!-- i taches-->
+                    <li>
+                        <a href="/taches.html">
+                            <i class="fa-solid fa-list-check"></i>
+                            <p>Tâches</p>
+                        </a>
+                    </li>
 
-            <!-- i discord-->
-            <li>
-              <a href="#">
-                <i class="fa-brands fa-discord"></i>
-                <p>Discord</p>
-              </a>
-            </li>
+                    <!-- i discord-->
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-discord"></i>
+                            <p>Discord</p>
+                        </a>
+                    </li>
 
-            <!-- i fichier-->
-            <li>
-              <a href="/fichier.html">
-                <i class="fa-solid fa-folder"></i>
-                <p>Fichier</p>
-              </a>
-            </li>
+                    <!-- i fichier-->
+                    <li>
+                        <a href="/fichier.html">
+                            <i class="fa-solid fa-folder"></i>
+                            <p>Fichier</p>
+                        </a>
+                    </li>
 
-            <!-- i facture-->
+                    <!-- i facture-->
 
-            <li>
-              <a href="/facture.html">
-                <i class="fa-solid fa-file-invoice-dollar"></i>
-                <p>Facture</p>
-              </a>
-            </li>
+                    <li>
+                        <a href="/facture.html">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                            <p>Facture</p>
+                        </a>
+                    </li>
 
-            <!-- i user-->
-            <li>
-              <a href="#">
-                <i class="fa-solid fa-user"></i>
-                <p>User</p>
-              </a>
-            </li>
+                    <!-- i user-->
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-user"></i>
+                            <p>User</p>
+                        </a>
+                    </li>
 
-            <!-- i admin-->
-            <li>
-              <a href="/admin.html">
-                <i class="fa-solid fa-gear"></i>
-                <p>Admin</p>
-              </a>
-            </li>
-          </ul>
+                    <!-- i admin-->
+                    <li>
+                        <a href="/admin.html">
+                            <i class="fa-solid fa-gear"></i>
+                            <p>Admin</p>
+                        </a>
+                    </li>
+                </ul>
             </div>
             <div class="nav-login">
                 <div><img src="./imgs/logoNorvoxx.png" alt="" /></div>
@@ -226,25 +226,25 @@
     <script>
         const search = document.getElementById("searchTask");
         const cards = document.querySelectorAll('.card');
-
+        
         search.addEventListener('input', (e) => {
             let recherche = e.target.value.toLowerCase();
             cards.forEach((card) => {
-                let name = document.querySelector(".file-name").innerText.toLowerCase();
-                let creator = document.querySelector(".creator").innerText.toLowerCase();
-                let date = document.querySelector(".date").innerText.toLowerCase();
+                let name = card.querySelector(".file-name").innerText.toLowerCase();
+                let creator = card.querySelector(".creator").innerText.toLowerCase();
+                let date = card.querySelector(".date").innerText.toLowerCase();
                 if (
                     !(
                         name.includes(recherche) ||
                         creator.includes(recherche) ||
-                        date.includes(recherche) 
-                        
-                    )  
+                        date.includes(recherche)
+
+                    )
                 ) {
                     card.classList.add('inactif');
                 } else
-                     card.classList.remove('inactif');
-          
+                    card.classList.remove('inactif');
+
             })
         })
     </script>
