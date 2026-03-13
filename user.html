@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>user</title>
+    <link rel="stylesheet" href="./css/root.css" />
+    <link rel="stylesheet" href="./css/nav-left.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+
+    <link rel="stylesheet" href="./css/chekbox.css" />
+
+    <link rel="stylesheet" href="./css/pages/taches.css" />
+    <link rel="stylesheet" href="./css/pages/facture.css" />
+    <link rel="stylesheet" href="./css/pages/user.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section class="container-nav-left">
+      <nav class="nav-left">
+        <div>
+          <div class="container-title">
+            <!-- <img class="nav-logo" src="/imgs/logo.png" alt="logo" /> -->
+            <div class="title-text">
+              <span class="main-title">EPI<span>-Studio</span></span>
+              <span class="subtitle">Associasion Techologique</span>
+            </div>
+          </div>
+          <ul>
+            <!-- i acceuil-->
+            <li>
+              <a href="/index.html">
+                <i class="fa-solid fa-house"></i>
+                <p>Accueil</p>
+              </a>
+            </li>
+
+            <!-- i calendrier-->
+            <li>
+              <a href="/calendrier.html">
+                <i class="fa-solid fa-calendar-days"></i>
+                <p>Calendrier</p>
+              </a>
+            </li>
+
+            <!-- i taches-->
+            <li>
+              <a href="/taches.html">
+                <i class="fa-solid fa-list-check"></i>
+                <p>Tâches</p>
+              </a>
+            </li>
+
+            <!-- i discord-->
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-discord"></i>
+                <p>Discord</p>
+              </a>
+            </li>
+
+            <!-- i fichier-->
+            <li>
+              <a href="/fichier.html">
+                <i class="fa-solid fa-folder"></i>
+                <p>Fichier</p>
+              </a>
+            </li>
+
+            <!-- i facture-->
+
+            <li>
+              <a href="/facture.html">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <p>Facture</p>
+              </a>
+            </li>
+
+            <!-- i user-->
+            <li>
+              <a href="/user.html">
+                <i class="fa-solid fa-user"></i>
+                <p>User</p>
+              </a>
+            </li>
+
+            <!-- i admin-->
+            <li>
+              <a href="/admin.html">
+                <i class="fa-solid fa-gear"></i>
+                <p>Admin</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-login">
+          <div><img src="./imgs/logoNorvoxx.png" alt="" /></div>
+          <div>
+            <p>Norvoxx</p>
+            <p class="subtitle">Dev web</p>
+          </div>
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </nav>
+    </section>
+    <main class="main-container">
+      <section class="main-container">
+        <section class="header-container">
+          <header>
+            <div class="header-search">
+              <input type="text" placeholder="Recheche Action / taches ..." />
+              <!-- https://fontawesome.com/icons/magnifying-glass?f=classic&s=solid -->
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <ul>
+              <li>
+                <!-- https://fontawesome.com/icons/bell?f=classic&s=solid -->
+                <i class="fa-solid fa-bell"></i>
+              </li>
+            </ul>
+          </header>
+        </section>
+        <section class="box-membre">
+          <div class="box liste-membre">
+            <h1 class="title">Liste des users</h1>
+            <ul>
+              <li><img src="/imgs/profilh.png" alt="" /> toto</li>
+              <li><img src="/imgs/profilh.png" alt="" />Pawns</li>
+              <li><img src="/imgs/logoNorvoxx.png" alt="" /> Norvoxx</li>
+              <li><img src="/imgs/profilh.png" alt="" />Gaël</li>
+              <li><img src="/imgs/profilh.png" alt="" />toto</li>
+              <li><img src="/imgs/profilh.png" alt="" />toto</li>
+              <li><img src="/imgs/profilh.png" alt="" />toto</li>
+              <li><img src="/imgs/profilh.png" alt="" />toto</li>
+              <li><img src="/imgs/profilh.png" alt="" />toto</li>
+            </ul>
+          </div>
+
+          <div class="box message">
+            <h1 class="title">Messages</h1>
+            <div class="container">
+              <div class="container-message tchat">
+                <img src="/imgs/profilh.png" alt="" />
+                <p>Coucou</p>
+                <time datetime="13/03/2026">aujourd'hui à 15h</time>
+              </div>
+              <div class="container-reponse tchat">
+                <img src="/imgs/logoNorvoxx.png" alt="" />
+                <p>Coucou</p>
+                <time datetime="13/03/2026">aujourd'hui à 15h07</time>
+              </div>
+            </div>
+            <input
+              class="text"
+              type="text"
+              placeholder="Tapez votre message..."
+            />
+          </div>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
