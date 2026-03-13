@@ -7,7 +7,7 @@
   padding: 20px;
   height: 100%;
   position: relative;
-  /* overflow-x: auto; */
+  overflow-x: auto;
 }
 
 .task-table-container h2 {
@@ -24,6 +24,7 @@
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   /* min-width: 600px; */
+
 }
 
 .task-table th,
@@ -157,12 +158,6 @@
 
   .task-table-container h2 {
     font-size: 1.3rem;
-  }
-
-  .task-table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
   }
 
   .edit,
